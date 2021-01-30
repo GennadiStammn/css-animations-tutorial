@@ -9,6 +9,7 @@ import { KirbyComponent } from './kirby/kirby.component';
 import { PictureGridComponent } from './picture-grid/picture-grid.component';
 import { SpinTransitionComponent } from './spin-transition/spin-transition.component';
 import { FromAboveComponent } from './from-above/from-above.component';
+import { BubblesComponent } from './bubbles/bubbles.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FromAboveComponent } from './from-above/from-above.component';
     KirbyComponent,
     PictureGridComponent,
     SpinTransitionComponent,
-    FromAboveComponent
+    FromAboveComponent,
+    BubblesComponent
   ],
   imports: [
     BrowserModule
