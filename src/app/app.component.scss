@@ -14,43 +14,39 @@ table {
   border-spacing: 0px;
 }
 
-@mixin image-attributes ($url) {
-  content: url($url);
-}
-
 @keyframes transition-pic1 {
   0% {
-    @include image-attributes("../assets/pic1.png");
+    content: url("../assets/pic1.png");
   }
   25% {
-    @include image-attributes("../assets/pic2.png");
+    content: url("../assets/pic2.png");
   }
   50% {
-    @include image-attributes("../assets/pic3.png");
+    content: url("../assets/pic3.png");
   }
   75% {
-    @include image-attributes("../assets/pic4.png");
+    content: url("../assets/pic4.png");
   }
   100% {
-    @include image-attributes("../assets/pic1.png");
+    content: url("../assets/pic1.png");
   }
 }
 
 @keyframes transition-pic2 {
   0% {
-    @include image-attributes("../assets/pic5.png");
+    content: url("../assets/pic5.png");
   }
   25% {
-    @include image-attributes("../assets/pic6.png");
+    content: url("../assets/pic6.png");
   }
   50% {
-    @include image-attributes("../assets/pic7.png");
+    content: url("../assets/pic7.png");
   }
   75% {
-    @include image-attributes("../assets/pic8.png");
+    content: url("../assets/pic8.png");
   }
   100% {
-    @include image-attributes("../assets/pic5.png");
+    content: url("../assets/pic5.png");
   }
 }
 
