@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { JiggleTextComponent } from './jiggle-text/jiggle-text.component';
 import { TableCellsColorTransitionComponent } from './table-cells-color-transition/table-cells-color-transition.component';
+import { ChooChooTrainComponent } from './choo-choo-train/choo-choo-train.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JiggleTextComponent,
-    TableCellsColorTransitionComponent
+    TableCellsColorTransitionComponent,
+    ChooChooTrainComponent
   ],
   imports: [
     BrowserModule

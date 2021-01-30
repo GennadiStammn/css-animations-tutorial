@@ -1,0 +1,252 @@
+@mixin train-position($left) {
+  position: absolute;
+  top: 75%;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes train {
+  0% {
+    @include train-position(-25%);
+  }
+  100% {
+    @include train-position(84%);
+  }
+}
+
+$train-delay: 1s;
+$total-animation-time: 10s;
+$delay-smoke-1: 2.7s;
+$delay-smoke-2: 3.75s;
+$delay-smoke-3: 4.75s;
+$delay-smoke-4: 5.75s;
+$delay-smoke-5: 6.80s;
+$delay-smoke-6: 7.80s;
+$delay-smoke-7: 8.80s;
+
+.train {
+  animation-name: train;
+  animation-duration: $total-animation-time;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-delay: $train-delay;
+}
+
+@mixin smoke-frame($top, $left, $size) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+  width: $size;
+  height: $size;
+}
+
+@keyframes smoke-animation-1 {
+  0% {
+    @include smoke-frame(70%, 10%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 10%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 8%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 8%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 8%, 0px);
+  }
+}
+
+@keyframes smoke-animation-2 {
+  0% {
+    @include smoke-frame(70%, 21%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 21%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 19%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 19%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 19%, 0px);
+  }
+}
+
+@keyframes smoke-animation-3 {
+  0% {
+    @include smoke-frame(70%, 32%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 32%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 30%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 30%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 30%, 0px);
+  }
+}
+
+@keyframes smoke-animation-4 {
+  0% {
+    @include smoke-frame(70%, 43%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 43%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 41%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 41%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 41%, 0px);
+  }
+}
+
+@keyframes smoke-animation-5 {
+  0% {
+    @include smoke-frame(70%, 54%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 54%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 52%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 52%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 52%, 0px);
+  }
+}
+
+@keyframes smoke-animation-6 {
+  0% {
+    @include smoke-frame(70%, 65%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 65%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 63%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 63%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 63%, 0px);
+  }
+}
+
+@keyframes smoke-animation-7 {
+  0% {
+    @include smoke-frame(70%, 76%, 0px)
+  }
+  5% {
+    @include smoke-frame(70%, 76%, 20px)
+  }
+  50% {
+    @include smoke-frame(65%, 75%, 40px);
+  }
+  60% {
+    @include smoke-frame(65%, 75%, 0px);
+  }
+  100% {
+    @include smoke-frame(65%, 75%, 0px);
+  }
+}
+
+@mixin smoke ($animation, $delay) {
+  animation-name: $animation;
+  animation-delay: $delay;
+  animation-duration: $total-animation-time;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.smoke1 {
+  @include smoke(smoke-animation-1, $delay-smoke-1)
+}
+
+.smoke2 {
+  @include smoke(smoke-animation-2, $delay-smoke-2)
+}
+
+.smoke3 {
+  @include smoke(smoke-animation-3, $delay-smoke-3)
+}
+
+.smoke4 {
+  @include smoke(smoke-animation-4, $delay-smoke-4)
+}
+
+.smoke5 {
+  @include smoke(smoke-animation-5, $delay-smoke-5)
+}
+
+.smoke6 {
+  @include smoke(smoke-animation-6, $delay-smoke-6)
+}
+
+.smoke7 {
+  @include smoke(smoke-animation-7, $delay-smoke-7)
+}
+
+@mixin hill ($top, $left, $size) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+  width: $size;
+  height: $size;
+}
+
+.hill1 {
+  @include hill(55%, 35%, 400px)
+}
+
+.hill2 {
+  @include hill(50%, 73%, 250px)
+}
+
+
+@mixin sun-frame ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@keyframes sun {
+  0% {
+    @include sun-frame(100px, 100px)
+  }
+  50% {
+    @include sun-frame(90px, 90px)
+  }
+  100% {
+    @include sun-frame(100px, 100px)
+  }
+}
+
+.sun {
+  position: absolute;
+  left: 65%;
+  top: 10%;
+  animation-name: sun;
+  animation-duration: 1s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
