@@ -1,0 +1,45 @@
+@mixin attributes ($top, $rotate, $dimension) {
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate($rotate);
+  width: $dimension;
+  height: $dimension;
+}
+
+@keyframes from-above-animation {
+  0% {
+    @include attributes(-30%, 180deg, 150px)
+  }
+  20% {
+    @include attributes(50%, 180deg, 150px)
+  }
+  26% {
+    @include attributes(50%, 720deg, 250px)
+  }
+  35% {
+    @include attributes(45%, 720deg, 250px)
+  }
+  90% {
+    @include attributes(45%, 720deg, 250px)
+  }
+  95% {
+    @include attributes(-30%, 720deg, 250px)
+  }
+  100% {
+    @include attributes(-30%, 720deg, 250px)
+  }
+}
+
+@mixin from-above-animation {
+  animation-name: from-above-animation;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+}
+
+.from-above {
+  @include from-above-animation();
+}
