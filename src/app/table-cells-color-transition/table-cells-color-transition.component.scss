@@ -1,114 +1,191 @@
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes color-transition1 {
-    0% {
-        background-color: white;
-    }
-    25% {
-        background-color: red;
-    }
-    50% {
-        background-color: white;
-    }
-    75% {
-        background-color: white;
-    }
-    100% {
-        background-color: white;
-    }
+@keyframes transition-red-1 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: red;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-@keyframes color-transition2 {
-    0% {
-        background-color: white;
-    }
-    25% {
-        background-color: white;
-    }
-    50% {
-        background-color: red;
-    }
-    75% {
-        background-color: white;
-    }
-    100% {
-        background-color: white;
-    }
+@keyframes transition-red-2 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-@keyframes color-transition3 {
-    0% {
-        background-color: white;
-    }
-    25% {
-        background-color: white;
-    }
-    50% {
-        background-color: white;
-    }
-    75% {
-        background-color: red;
-    }
-    100% {
-        background-color: white;
-    }
+@keyframes transition-red-3 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: red;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-@keyframes color-transition4 {
-    0% {
-        background-color: white;
-    }
-    25% {
-        background-color: white;
-    }
-    50% {
-        background-color: white;
-    }
-    75% {
-        background-color: white;
-    }
-    100% {
-        background-color: red;
-    }
+@keyframes transition-red-4 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: red;
+  }
 }
 
-.cell1 {
-    width: 100px;
-    height: 100px;
-    animation-name: color-transition1;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+@keyframes transition-orange-1 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: orange;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-.cell2 {
-    width: 100px;
-    height: 100px;
-    animation-name: color-transition2;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+@keyframes transition-orange-2 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: orange;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-.cell3 {
-    width: 100px;
-    height: 100px;
-    animation-name: color-transition3;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+@keyframes transition-orange-3 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: orange;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
-.cell4 {
-    width: 100px;
-    height: 100px;
-    animation-name: color-transition4;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+@keyframes transition-orange-4 {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: white;
+  }
+  50% {
+    background-color: white;
+  }
+  75% {
+    background-color: white;
+  }
+  100% {
+    background-color: orange;
+  }
+}
+
+@mixin cell-transform-animation($animation) {
+  width: 200px;
+  height: 200px;
+  animation-name: $animation;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.red1 {
+  @include cell-transform-animation(transition-red-1)
+}
+
+.red2 {
+  @include cell-transform-animation(transition-red-2)
+}
+
+.red3 {
+  @include cell-transform-animation(transition-red-3)
+}
+
+.red4 {
+  @include cell-transform-animation(transition-red-4)
+}
+
+.orange1 {
+  @include cell-transform-animation(transition-orange-1)
+}
+
+.orange2 {
+  @include cell-transform-animation(transition-orange-2)
+}
+
+.orange3 {
+  @include cell-transform-animation(transition-orange-3)
+}
+
+.orange4 {
+  @include cell-transform-animation(transition-orange-4)
 }
