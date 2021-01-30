@@ -1,0 +1,118 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+td {
+  padding: 0px;
+}
+
+table {
+  border-spacing: 0px;
+}
+
+@mixin background ($url) {
+  background-image: url($url);
+}
+
+@mixin attributes () {
+  width: 300px;
+  height: 900px;
+}
+
+@keyframes transition-pic1 {
+  0% {
+    @include background("../assets/pic1.png")
+  }
+  25% {
+    @include background("../assets/pic2.png")
+  }
+  50% {
+    @include background("../assets/pic3.png")
+  }
+  75% {
+    @include background("../assets/pic4.png")
+  }
+  100% {
+    @include background("../assets/pic1.png")
+  }
+}
+
+@keyframes transition-pic2 {
+  0% {
+    @include background("../assets/pic5.png")
+  }
+  25% {
+    @include background("../assets/pic6.png")
+  }
+  50% {
+    @include background("../assets/pic7.png")
+  }
+  75% {
+    @include background("../assets/pic8.png")
+  }
+  100% {
+    @include background("../assets/pic5.png")
+  }
+}
+
+@mixin transition ($animation, $delay) {
+  animation-name: $animation;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  animation-delay: $delay;
+}
+
+.pic1 {
+  @include attributes();
+  @include transition(transition-pic1, 0s)
+}
+
+.pic2 {
+  @include attributes();
+  @include transition(transition-pic2, 2s)
+}
+
+@mixin icon-atrributes ($top, $left, $dimension, $rotate) {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate($rotate);
+  left: $left;
+  top: $top;
+  width: $dimension;
+  height: $dimension;
+}
+
+@keyframes icon-animation {
+  0% {
+    @include icon-atrributes(-20%, 50%, 150px, 180deg)
+  }
+  10% {
+    @include icon-atrributes(50%, 50%, 150px, 180deg)
+  }
+  13% {
+    @include icon-atrributes(50%, 50%, 250px, 720deg)
+  }
+  90% {
+    @include icon-atrributes(50%, 50%, 250px, 720deg)
+  }
+  95% {
+    @include icon-atrributes(-20%, 50%, 250px, 720deg)
+  }
+  100% {
+    @include icon-atrributes(-20%, 50%, 250px, 720deg)
+  }
+}
+
+.icon-animation {
+  animation-name: icon-animation;
+  animation-duration: 8s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
