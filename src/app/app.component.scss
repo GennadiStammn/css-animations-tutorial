@@ -7,75 +7,68 @@
 
 td {
   padding: 0px;
+  width: 300px;
 }
 
 table {
   border-spacing: 0px;
 }
 
-@mixin background ($url) {
-  background-image: url($url);
-}
-
-@mixin attributes () {
-  width: 300px;
-  height: 900px;
+@mixin image-attributes ($url) {
+  content: url($url);
 }
 
 @keyframes transition-pic1 {
   0% {
-    @include background("../assets/pic1.png")
+    @include image-attributes("../assets/pic1.png");
   }
   25% {
-    @include background("../assets/pic2.png")
+    @include image-attributes("../assets/pic2.png");
   }
   50% {
-    @include background("../assets/pic3.png")
+    @include image-attributes("../assets/pic3.png");
   }
   75% {
-    @include background("../assets/pic4.png")
+    @include image-attributes("../assets/pic4.png");
   }
   100% {
-    @include background("../assets/pic1.png")
+    @include image-attributes("../assets/pic1.png");
   }
 }
 
 @keyframes transition-pic2 {
   0% {
-    @include background("../assets/pic5.png")
+    @include image-attributes("../assets/pic5.png");
   }
   25% {
-    @include background("../assets/pic6.png")
+    @include image-attributes("../assets/pic6.png");
   }
   50% {
-    @include background("../assets/pic7.png")
+    @include image-attributes("../assets/pic7.png");
   }
   75% {
-    @include background("../assets/pic8.png")
+    @include image-attributes("../assets/pic8.png");
   }
   100% {
-    @include background("../assets/pic5.png")
+    @include image-attributes("../assets/pic5.png");
   }
 }
 
-@mixin transition ($animation, $delay) {
+@mixin rotate-pictures ($animation, $delay) {
   animation-name: $animation;
   animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate-reverse;
+  animation-direction: normal;
   animation-delay: $delay;
 }
 
 .pic1 {
-  @include attributes();
-  @include transition(transition-pic1, 0s)
+  @include rotate-pictures(transition-pic1, 0s)
 }
 
 .pic2 {
-  @include attributes();
-  @include transition(transition-pic2, 2s)
+  @include rotate-pictures(transition-pic2, 3s)
 }
 
 @mixin icon-atrributes ($top, $left, $dimension, $rotate) {
