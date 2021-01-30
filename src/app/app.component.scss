@@ -14,7 +14,7 @@ table {
   border-spacing: 0px;
 }
 
-@keyframes transition-pic1 {
+@keyframes animation1 {
   0% {
     content: url("../assets/pic1.png");
   }
@@ -32,7 +32,7 @@ table {
   }
 }
 
-@keyframes transition-pic2 {
+@keyframes animation2 {
   0% {
     content: url("../assets/pic5.png");
   }
@@ -60,11 +60,11 @@ table {
 }
 
 .pic1 {
-  @include rotate-pictures(transition-pic1, 0s)
+  @include rotate-pictures(animation1, 0s)
 }
 
 .pic2 {
-  @include rotate-pictures(transition-pic2, 3s)
+  @include rotate-pictures(animation2, 3s)
 }
 
 @mixin icon-atrributes ($top, $left, $dimension, $rotate) {
