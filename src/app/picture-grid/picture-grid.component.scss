@@ -1,0 +1,99 @@
+td, tr, table {
+  padding: 0px;
+  margin: 0px;
+  border-spacing: 0px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pic-div {
+  width: 300px;
+  height: 900px;
+}
+
+@mixin image ($image) {
+  background-image: url($image);
+}
+
+@keyframes pic1-animation {
+  0% {
+    @include image("../../assets/pics/slide1.png")
+  }
+  50% {
+    @include image("../../assets/pics/slide2.png")
+  }
+  100% {
+    @include image("../../assets/pics/slide1.png")
+  }
+}
+
+@keyframes pic2-animation {
+  0% {
+    @include image("../../assets/pics/slide3.png")
+  }
+  50% {
+    @include image("../../assets/pics/slide4.png")
+  }
+  100% {
+    @include image("../../assets/pics/slide3.png")
+  }
+}
+
+@keyframes pic3-animation {
+  0% {
+    @include image("../../assets/pics/slide5.png")
+  }
+  50% {
+    @include image("../../assets/pics/slide6.png")
+  }
+  100% {
+    @include image("../../assets/pics/slide5.png")
+  }
+}
+
+
+@keyframes pic4-animation {
+  0% {
+    @include image("../../assets/pics/slide7.png")
+  }
+  50% {
+    @include image("../../assets/pics/slide8.png")
+  }
+  100% {
+    @include image("../../assets/pics/slide7.png")
+  }
+}
+
+@mixin pic-animation ($animation) {
+  animation-name: $animation;
+  animation-direction: alternate-reverse;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.pic1 {
+  @include pic-div();
+  @include pic-animation(pic1-animation)
+}
+
+.pic2 {
+  @include pic-div();
+  @include pic-animation(pic2-animation)
+}
+
+.pic3 {
+  @include pic-div();
+  @include pic-animation(pic3-animation)
+}
+
+
+.pic4 {
+  @include pic-div();
+  @include pic-animation(pic4-animation)
+}

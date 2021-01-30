@@ -6,6 +6,7 @@ import { JiggleTextComponent } from './jiggle-text/jiggle-text.component';
 import { TableCellsColorTransitionComponent } from './table-cells-color-transition/table-cells-color-transition.component';
 import { ChooChooTrainComponent } from './choo-choo-train/choo-choo-train.component';
 import { KirbyComponent } from './kirby/kirby.component';
+import { PictureGridComponent } from './picture-grid/picture-grid.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { KirbyComponent } from './kirby/kirby.component';
     JiggleTextComponent,
     TableCellsColorTransitionComponent,
     ChooChooTrainComponent,
-    KirbyComponent
+    KirbyComponent,
+    PictureGridComponent
   ],
   imports: [
     BrowserModule
