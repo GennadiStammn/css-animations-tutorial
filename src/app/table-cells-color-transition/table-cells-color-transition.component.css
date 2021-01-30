@@ -1,0 +1,114 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes color-transition1 {
+    0% {
+        background-color: white;
+    }
+    25% {
+        background-color: red;
+    }
+    50% {
+        background-color: white;
+    }
+    75% {
+        background-color: white;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes color-transition2 {
+    0% {
+        background-color: white;
+    }
+    25% {
+        background-color: white;
+    }
+    50% {
+        background-color: red;
+    }
+    75% {
+        background-color: white;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes color-transition3 {
+    0% {
+        background-color: white;
+    }
+    25% {
+        background-color: white;
+    }
+    50% {
+        background-color: white;
+    }
+    75% {
+        background-color: red;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes color-transition4 {
+    0% {
+        background-color: white;
+    }
+    25% {
+        background-color: white;
+    }
+    50% {
+        background-color: white;
+    }
+    75% {
+        background-color: white;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.cell1 {
+    width: 100px;
+    height: 100px;
+    animation-name: color-transition1;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.cell2 {
+    width: 100px;
+    height: 100px;
+    animation-name: color-transition2;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.cell3 {
+    width: 100px;
+    height: 100px;
+    animation-name: color-transition3;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.cell4 {
+    width: 100px;
+    height: 100px;
+    animation-name: color-transition4;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
