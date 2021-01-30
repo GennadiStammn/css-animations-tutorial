@@ -1,0 +1,140 @@
+@mixin jiggle-frame ($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes jiggle {
+  0% {
+    @include jiggle-frame(45%, 45%);
+  }
+  25% {
+    @include jiggle-frame(55%, 47%);
+  }
+  50% {
+    @include jiggle-frame(45%, 50%);
+  }
+  75% {
+    @include jiggle-frame(55%, 53%);
+  }
+  100% {
+    @include jiggle-frame(45%, 55%);
+  }
+}
+
+@mixin jiggle-animation {
+  animation-name: jiggle;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+}
+
+@mixin font-div-attributes {
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  width: 200px;
+  position: relative;
+}
+
+.jiggle {
+  @include font-div-attributes();
+  @include jiggle-animation()
+}
+
+@mixin star-frame($top, $left, $rotate) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+  transform: rotate($rotate);
+}
+
+@keyframes star0 {
+  0% {
+    @include star-frame(-1%, 25%, 0deg);
+  }
+  100% {
+    @include star-frame(25%, -1%, 270deg);
+  }
+}
+
+@keyframes star1 {
+  0% {
+    @include star-frame(-1%, 50%, 0deg);
+  }
+  100% {
+    @include star-frame(50%, -1%, 600deg);
+  }
+}
+
+@keyframes star2 {
+  0% {
+    @include star-frame(-1%, 75%, 0deg);
+  }
+  100% {
+    @include star-frame(75%, -1%, 600deg);
+  }
+}
+
+@keyframes star3 {
+  0% {
+    @include star-frame(5%, 94%, 0deg);
+  }
+  100% {
+    @include star-frame(94%, 25%, 900deg);
+  }
+}
+
+@keyframes star4 {
+  0% {
+    @include star-frame(25%, 94%, 0deg);
+  }
+  100% {
+    @include star-frame(94%, 50%, 270deg);
+  }
+}
+
+@keyframes star5 {
+  0% {
+    @include star-frame(50%, 94%, 0deg);
+  }
+  100% {
+    @include star-frame(94%, 75%, 270deg);
+  }
+}
+
+@mixin star-animation ($name, $duration) {
+  overflow: hidden;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.star0 {
+  @include star-animation(star0, 1.5s)
+}
+
+.star1 {
+  @include star-animation(star1, 2.5s)
+}
+
+.star2 {
+  @include star-animation(star2, 4.5s)
+}
+
+.star3 {
+  @include star-animation(star3, 4s)
+}
+
+.star4 {
+  @include star-animation(star4, 3s)
+}
+
+.star5 {
+  @include star-animation(star5, 2s)
+}
