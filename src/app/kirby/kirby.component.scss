@@ -1,0 +1,101 @@
+@mixin kirby-position ($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes kirby-jiggle {
+  0% {
+    @include kirby-position(15%, 9.5%);
+  }
+  100% {
+    @include kirby-position(15%, 10%);
+  }
+}
+
+@mixin kirby-animation {
+  animation-name: kirby-jiggle;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+}
+
+.kirby {
+  @include kirby-animation
+}
+
+@mixin food-frame ($top, $left, $rotate) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+  transform: rotate($rotate);
+}
+
+$final-food-pos-top: 15%;
+$final-food-pos-left: 10%;
+
+@keyframes burger-animation {
+  0% {
+    @include food-frame(25%, 85%, 0deg)
+  }
+  100% {
+    @include food-frame($final-food-pos-top, $final-food-pos-left, 550deg)
+  }
+}
+
+@keyframes sandwich-animation {
+  0% {
+    @include food-frame(85%, 60%, 0deg)
+  }
+  100% {
+    @include food-frame($final-food-pos-top, $final-food-pos-left, 450deg)
+  }
+}
+
+@keyframes ice-cream-animation {
+  0% {
+    @include food-frame(85%, 10%, 0deg)
+  }
+  100% {
+    @include food-frame($final-food-pos-top, $final-food-pos-left, 450deg)
+  }
+}
+
+@keyframes pineapple-animation{
+  0% {
+    @include food-frame(88%, 90%, 0deg)
+  }
+  100% {
+    @include food-frame($final-food-pos-top, $final-food-pos-left, 900deg)
+  }
+}
+
+@mixin food-animation ($animation, $duration) {
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+.burger {
+  @include food-animation(burger-animation, 1.7s)
+}
+
+
+.sandwich {
+  @include food-animation(sandwich-animation, 1.5s)
+}
+
+.ice-cream {
+  @include food-animation(ice-cream-animation, 1s)
+}
+
+.pineapple {
+  @include food-animation(pineapple-animation, 2.4s)
+}
