@@ -1,0 +1,60 @@
+$max-width: 500px;
+$max-height: 600px;
+
+@mixin attributes ($url, $width, $height) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url($url)
+}
+
+@keyframes transition {
+  0% {
+    @include attributes("../../assets/css-icon.png", $max-width, $max-height)
+  }
+  25% {
+    @include attributes("../../assets/css-icon.png", $max-width, $max-height)
+  }
+  26% {
+    @include attributes("../../assets/css-icon.png", 0, $max-height)
+  }
+  27% {
+    @include attributes("../../assets/html-icon.png", $max-width, $max-height)
+  }
+  50% {
+    @include attributes("../../assets/html-icon.png", $max-width, $max-height)
+  }
+  51% {
+    @include attributes("../../assets/html-icon.png", $max-width, 0px)
+  }
+  52% {
+    @include attributes("../../assets/css-icon.png", $max-width, $max-height)
+  }
+  75% {
+    @include attributes("../../assets/css-icon.png", $max-width, $max-height)
+  }
+  76% {
+    @include attributes("../../assets/css-icon.png", 0px, 0px)
+  }
+  77% {
+    @include attributes("../../assets/html-icon.png", $max-width, $max-height)
+  }
+  100% {
+    @include attributes("../../assets/html-icon.png", $max-width, $max-height)
+  }
+}
+
+@mixin transition {
+  animation-name: transition;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+.spin-transition {
+  @include transition();
+}

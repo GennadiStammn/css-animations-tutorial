@@ -7,6 +7,8 @@ import { TableCellsColorTransitionComponent } from './table-cells-color-transiti
 import { ChooChooTrainComponent } from './choo-choo-train/choo-choo-train.component';
 import { KirbyComponent } from './kirby/kirby.component';
 import { PictureGridComponent } from './picture-grid/picture-grid.component';
+import { SpinTransitionComponent } from './spin-transition/spin-transition.component';
+import { FromAboveComponent } from './from-above/from-above.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { PictureGridComponent } from './picture-grid/picture-grid.component';
     TableCellsColorTransitionComponent,
     ChooChooTrainComponent,
     KirbyComponent,
-    PictureGridComponent
+    PictureGridComponent,
+    SpinTransitionComponent,
+    FromAboveComponent
   ],
   imports: [
     BrowserModule
